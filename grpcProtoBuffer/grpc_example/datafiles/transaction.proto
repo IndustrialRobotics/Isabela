@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package datafiles;
+
+//Command Syntax:
+//protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/addressbook.proto
+
+//to compile this file enter on Terminal:
+//protoc -I grpc_example/ grpc_example/transaction2.proto --go_out=plugins=grpc:grpc_example
+
+message TransactionRequest {
+    string from = 1;
+    string to = 2;
+    float amount = 3;
+}
+
+
+message TransactionResponse {
+    bool confirmation = 1;
+}
+
+service MoneyTransaction {
+    rpc MakeTransaction (TransactionRequest) returns (TransactionResponse) {
+    }
+}
