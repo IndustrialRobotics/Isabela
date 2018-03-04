@@ -1,5 +1,5 @@
 package main
 
-type deck []string
+type Deck []string
 
 
