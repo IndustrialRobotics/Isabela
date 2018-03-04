@@ -4,5 +4,7 @@ import "fmt"
 
 func main() {
 
-	fmt.Println("Hello Mr. Modbus Protocol")
+	for i := 0; i < 25; i++ {
+		fmt.Println(i, "Hello Mr. Modbus Protocol")
+	}
 }
