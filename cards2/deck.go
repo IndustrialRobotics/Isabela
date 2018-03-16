@@ -17,7 +17,7 @@ func (d deck) print() {
 	}
 }
 
-func newCard() deck {
+func newDeck() deck {
 
 	cards := deck{}
 	cardValues := []string{"Ace", "Two", "Three", "Four"}
@@ -49,9 +49,7 @@ func newDeckFromFile(filename string) deck {
 		fmt.Println("Error:", err)
 		os.Exit(1)
 	}
-
 	ss := strings.Split(string(bs), ",")
-
 	return deck(ss)
 }
 
@@ -61,8 +59,3 @@ func (d deck) shuffle() {
 		d[i], d[j] = d[j], d[i]
 	})
 }
-
-
-
-
-
